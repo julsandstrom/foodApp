@@ -11,7 +11,10 @@ const DisplayData = ({ meal, image, description }) => {
       </li>
       {showInfo && (
         <div className="modal" onClick={() => setShowInfo(!showInfo)}>
-          {description}
+   
+   {description.split('\r\n').map((descr, idx) => (
+  <p key={idx}>{descr}</p>
+))}
         </div>
       )}
     </>
